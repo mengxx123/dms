@@ -3,6 +3,7 @@ import axios from 'axios'
 import styles from './index.less'
 import { message, Input, Button } from 'antd'
 import storage from '../utils/storage'
+import http from '../utils/http'
 
 const { TextArea } = Input
 
@@ -19,7 +20,7 @@ export default function () {
     }, [])
 
     async function connect() {
-        let ret = await axios.post('http://localhost:7001/mysql/connect', JSON.parse(code))
+        let ret = await http.post('/mysql/connect', JSON.parse(code))
         console.log('ret', ret)
         if (ret.status === 200) {
             message.success('连接成功')
@@ -34,7 +35,7 @@ export default function () {
     }
 
     async function showDatabaseList() {
-        let ret = await axios.get('http://localhost:7001/mysql/databases')
+        let ret = await http.get('/mysql/databases')
         console.log('ret', ret)
         if (ret.status === 200) {
             // message.info('连接成功')

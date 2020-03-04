@@ -53,6 +53,13 @@ const config: IConfig = {
                     component: './databases',
                 },
                 {
+                    path: '/databases/:name',
+                    name: '数据库详情',
+                    exact: true,
+                    icon: 'user',
+                    component: './databaseDetail',
+                },
+                {
                     path: '/form',
                     name: '表单',
                     exact: false,
