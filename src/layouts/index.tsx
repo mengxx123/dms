@@ -75,7 +75,7 @@ const BasicLayout: React.FC = props => {
                 <div className={styles.logo} key="logo">
                     <Link to="/">
                         <img src={logo} alt="logo" />
-                        <h1>MySQL</h1>
+                        <h1>DMS</h1>
                     </Link>
                 </div>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">

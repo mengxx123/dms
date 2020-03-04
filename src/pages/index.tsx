@@ -40,6 +40,7 @@ export default function () {
         if (ret.status === 200) {
             // message.info('连接成功')
             console.log('ret', ret.data)
+            storage.set('connectId', 'ret.data')
         } else {
             message.error('连接失败')
         }
@@ -59,15 +60,6 @@ export default function () {
             <Button type="primary" onClick={save}>保存</Button>
             <Button type="primary" onClick={showDatabaseList}>数据库列表</Button>
             <Button type="primary" onClick={help}>帮助</Button>
-
-            <ul className={styles.list}>
-                <li>
-                    To get started, edit <code>src/pages/index.js</code> and save to reload.
-        </li>
-                <li>
-                    <a href="https://umijs.org/guide/getting-started.html">Getting Started</a>
-                </li>
-            </ul>
         </div>
     );
 }
