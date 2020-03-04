@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import styles from './index.less'
 import { message, Input, Button } from 'antd'
 import storage from '../utils/storage'
@@ -15,8 +14,16 @@ export default function () {
 }`)
 
     useEffect(() => {
-        console.log('onMouneed', storage.get('dbInfo', ''))
-        setCode(storage.get('dbInfo', ''))
+        console.log('onMouneed', storage.get('dbInfo', `{
+    "host": "",
+    "user": "",
+    "password": ""
+}`))
+        setCode(storage.get('dbInfo', `{
+            "host": "",
+            "user": "",
+            "password": ""
+        }`))
     }, [])
 
     async function connect() {
